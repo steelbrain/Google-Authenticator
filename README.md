@@ -27,7 +27,7 @@ Generating a QR code image is super simple too!
 ```hack
 $Auth = Google_Authenticator::getInstance('SomeSecretUserSpecificKey');
 header('Content-Type: image/png');
-echo $Auth->generateQRCode();
+echo $Auth->generateQRCode("MyWebSite: user@example.com");
 ```
 
 #### LICENSE
