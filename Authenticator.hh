@@ -54,8 +54,8 @@ class Google_Authenticator {
     return str_pad($Hash, 6, '0', STR_PAD_LEFT);
   }
   // Note: apt-get install qrencode
-  public function generateQRCode(string $Title, int $Size = 5): string {
-    return shell_exec('qrencode '.escapeshellarg('otpauth://totp/'.$Title.'?secret='.$this->RawSecret). ' -o - -s '.$Size);
+  public function generateQRCode(string $Title, string $Issuer, int $Size = 5): string {
+    return shell_exec('qrencode '.escapeshellarg('otpauth://totp/'.$Title.'?secret='.$this->RawSecret.'&issuer='.$Issuer). ' -o - -s '.$Size);
   }
   public function verify(string $Key): bool {
     return $this->generate() === $Key;
