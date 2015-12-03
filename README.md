@@ -9,7 +9,7 @@ Google-Authenticator is a super-simple Google Authenticator client/engine in Hac
 class Google_Authenticator {
   public static function getInstance(string $Secret): this
   public function generate(?float $Time = null): string
-  public function generateQRCode(string $Title, int $Size = 5): string
+  public function generateQRCode(string $Title, string $Issuer, int $Size = 5): string
   public function verify(string $Key): bool
 }
 ```
